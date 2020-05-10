@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView ivPicture;
     private Button btnCamera;
     private Button btnPublish;
+    private Button btnLogout;
     private File photoFile;
     private String photoFileName = "photo.jpg";
 
@@ -48,6 +49,21 @@ public class MainActivity extends AppCompatActivity {
         ivPicture = findViewById(R.id.ivPicture);
         btnCamera = findViewById(R.id.btnCamera);
         btnPublish = findViewById(R.id.btnPublish);
+        btnLogout = findViewById(R.id.button3);
+
+  //      btnLogout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // Log out any existing session
+//                ParseUser currentUser = ParseUser.getCurrentUser();
+//                if (currentUser != null) {
+//                    ParseUser.logOut();
+//                    Intent i = new Intent(MainActivity.this, LoginActivity.class);
+//                    startActivity(i);
+//                    finish();
+//                }
+//            }
+//        });
         
         btnCamera.setOnClickListener(new View.OnClickListener() {
             @Override
