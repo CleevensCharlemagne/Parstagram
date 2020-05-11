@@ -10,8 +10,8 @@
         android:id="@+id/loginLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:orientation="vertical">
@@ -20,15 +20,18 @@
             android:id="@+id/ivInstagram"
             android:layout_width="357dp"
             android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="-15dp"
             app:srcCompat="@drawable/nav_logo_whiteout" />
 
         <EditText
             android:id="@+id/etUsername"
-            android:layout_width="349dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
             android:layout_marginStart="15dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="30dp"
@@ -39,13 +42,14 @@
 
         <EditText
             android:id="@+id/etPassword"
-            android:layout_width="349dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/etUsername"
             android:layout_alignParentStart="true"
             android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="30dp"
             android:background="@drawable/rounded_edittext"
             android:ems="10"
@@ -54,12 +58,13 @@
 
         <Button
             android:id="@+id/btnLogin"
-            android:layout_width="349dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/etPassword"
             android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="30dp"
             android:backgroundTint="#00acee"
             android:text="LOG IN"
@@ -68,10 +73,11 @@
 
         <Button
             android:id="@+id/btnSignup"
-            android:layout_width="349dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/etPassword"
             android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="30dp"
