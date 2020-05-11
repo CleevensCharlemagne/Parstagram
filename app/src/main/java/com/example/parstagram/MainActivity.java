@@ -51,19 +51,19 @@ public class MainActivity extends AppCompatActivity {
         btnPublish = findViewById(R.id.btnPublish);
         btnLogout = findViewById(R.id.button3);
 
-  //      btnLogout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // Log out any existing session
-//                ParseUser currentUser = ParseUser.getCurrentUser();
-//                if (currentUser != null) {
-//                    ParseUser.logOut();
-//                    Intent i = new Intent(MainActivity.this, LoginActivity.class);
-//                    startActivity(i);
-//                    finish();
-//                }
-//            }
-//        });
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Log out any existing session
+                ParseUser currentUser = ParseUser.getCurrentUser();
+                if (currentUser != null) {
+                    ParseUser.logOut();
+                    Intent i = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+            }
+        });
         
         btnCamera.setOnClickListener(new View.OnClickListener() {
             @Override

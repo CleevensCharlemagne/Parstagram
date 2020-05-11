@@ -67,7 +67,7 @@
             android:textColor="#ffffff" />
 
         <Button
-            android:id="@+id/btnSingup"
+            android:id="@+id/btnSignup"
             android:layout_width="349dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/etPassword"
