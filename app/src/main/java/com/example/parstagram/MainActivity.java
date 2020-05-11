@@ -1,5 +1,6 @@
 package com.example.parstagram;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
@@ -12,12 +13,14 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -33,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     public static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 42;
     private EditText etDescription;
+    private BottomNavigationView bottomNavigationView;
     private ImageView ivPicture;
     private Button btnCamera;
     private Button btnPublish;
-    private Button btnLogout;
     private File photoFile;
     private String photoFileName = "photo.jpg";
 
@@ -49,19 +52,23 @@ public class MainActivity extends AppCompatActivity {
         ivPicture = findViewById(R.id.ivPicture);
         btnCamera = findViewById(R.id.btnCamera);
         btnPublish = findViewById(R.id.btnPublish);
-        btnLogout = findViewById(R.id.button3);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        btnLogout.setOnClickListener(new View.OnClickListener() {
+        // Set Home selected
+        bottomNavigationView.setSelectedItemId(R.id.post);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                // Log out any existing session
-                ParseUser currentUser = ParseUser.getCurrentUser();
-                if (currentUser != null) {
-                    ParseUser.logOut();
-                    Intent i = new Intent(MainActivity.this, LoginActivity.class);
-                    startActivity(i);
-                    finish();
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch(item.getItemId()) {
+                    case R.id.post:
+                        return true;
+
+                    case R.id.user:
+                        goLogoutActivity();
+                        return true;
                 }
+                return false;
             }
         });
         
@@ -92,6 +99,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         
+    }
+
+    private void goLogoutActivity() {
+        Intent i = new Intent(getApplicationContext(), LogoutActivity.class);
+        startActivity(i);
     }
 
     private void launchcamera() {
