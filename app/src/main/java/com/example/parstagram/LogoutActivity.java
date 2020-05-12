@@ -34,7 +34,7 @@ public class LogoutActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()) {
                     case R.id.post:
-                        goImageCaptureActivity();
+                        goPostActivity();
                         return true;
 
                     case R.id.user:
@@ -66,8 +66,4 @@ public class LogoutActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    private void goImageCaptureActivity() {
-        Intent i = new Intent(getApplicationContext(), imageCaptureActivity.class);
-        startActivity(i);
-    }
 }

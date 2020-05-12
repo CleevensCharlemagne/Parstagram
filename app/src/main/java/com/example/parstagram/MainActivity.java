@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -55,14 +56,13 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         // Set Home selected
-       // bottomNavigationView.setSelectedItemId(R.id.post);
+       bottomNavigationView.setSelectedItemId(R.id.post);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()) {
                     case R.id.post:
-                        goImageCaptureActivity();
                         return true;
 
                     case R.id.user:
@@ -102,12 +102,7 @@ public class MainActivity extends AppCompatActivity {
         
     }
 
-    private void goImageCaptureActivity() {
-        Intent i = new Intent(getApplicationContext(), imageCaptureActivity.class);
-        startActivity(i);
-    }
-
-    private void goLogoutActivity() {
+       private void goLogoutActivity() {
         Intent i = new Intent(getApplicationContext(), LogoutActivity.class);
         startActivity(i);
     }
@@ -165,6 +160,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void savePost(String description, ParseUser currentUser, File photoFile) {
+        // on some click or some loading we need to wait for...
+        ProgressBar pb = (ProgressBar) findViewById(R.id.pbLoading);
+        pb.setVisibility(ProgressBar.VISIBLE);
+        // run a background job and once complete
+        pb.setVisibility(ProgressBar.INVISIBLE);
+
+
         Post post = new Post();
         post.setDescription(description);
         post.setImage(new ParseFile(photoFile));
