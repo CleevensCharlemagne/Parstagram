@@ -108,4 +108,9 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(i);
         finish();
     }
+
+    private void goImageCaptureActivity() {
+        Intent i = new Intent(getApplicationContext(), imageCaptureActivity.class);
+        startActivity(i);
+    }
 }

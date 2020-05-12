@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 42;
     private EditText etDescription;
     private BottomNavigationView bottomNavigationView;
-    private ImageView ivPicture;
+    public static ImageView ivPicture;
     private Button btnCamera;
     private Button btnPublish;
     private File photoFile;
@@ -55,13 +55,14 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         // Set Home selected
-        bottomNavigationView.setSelectedItemId(R.id.post);
+       // bottomNavigationView.setSelectedItemId(R.id.post);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()) {
                     case R.id.post:
+                        goImageCaptureActivity();
                         return true;
 
                     case R.id.user:
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-        
+
         btnCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,6 +100,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         
+    }
+
+    private void goImageCaptureActivity() {
+        Intent i = new Intent(getApplicationContext(), imageCaptureActivity.class);
+        startActivity(i);
     }
 
     private void goLogoutActivity() {
