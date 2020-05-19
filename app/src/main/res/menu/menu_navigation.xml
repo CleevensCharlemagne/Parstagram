@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-<item
-    android:id="@+id/home"
-    android:title="Home"
-    android:icon="@drawable/ic_home" />
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home"
+        android:title="Home"
+        app:showAsAction="always" />
 
-<item
-    android:id="@+id/post"
-    android:title="Post"
-    android:icon="@drawable/ic_post" />
+    <item
+        android:id="@+id/post"
+        android:icon="@drawable/ic_post"
+        android:title="Post"
+        app:showAsAction="always" />
 
-<item
-    android:id="@+id/user"
-    android:title="User"
-    android:icon="@drawable/ic_user" />
+    <item
+        android:id="@+id/user"
+        android:icon="@drawable/ic_user"
+        android:title="User"
+        app:showAsAction="always" />
 
 </menu>
