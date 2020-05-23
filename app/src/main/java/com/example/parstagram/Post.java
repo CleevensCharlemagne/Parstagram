@@ -5,6 +5,10 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @ParseClassName("Post")
 public class Post extends ParseObject {
 
@@ -12,6 +16,7 @@ public class Post extends ParseObject {
     public static final String KEY_IMAGE = "image";
     public static final String KEY_USER = "user";
     public static final String KEY_CREATED_AT = "createdAt";
+    public static final String KEY_LIKE = "like";
 
     public String getDescription(){
         return getString(KEY_DESCRIPTION);
@@ -36,4 +41,14 @@ public class Post extends ParseObject {
     public void setUser(ParseUser user){
         put(KEY_USER, user);
     }
+
+    public Date getCreatedAt() { return getDate(KEY_CREATED_AT);}
+
+        public long getLikeCount(){
+           return getLong(KEY_LIKE);
+        }
+
+        public void setLikeCount(long like){
+            put(KEY_LIKE, like);
+        }
 }

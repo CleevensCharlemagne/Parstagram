@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/editProfile"
+        android:icon="@drawable/ic_user"
+        android:iconTintMode="@android:color/white"
+        android:title="Home"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/send"
+        android:icon="@drawable/ufi_new_direct"
+        android:iconTintMode="@android:color/white"
+        android:title="Home"
+        app:showAsAction="always" />
+
+</menu>
