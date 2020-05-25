@@ -51,4 +51,6 @@ public class Post extends ParseObject {
         public void setLikeCount(long like){
             put(KEY_LIKE, like);
         }
+
+
 }

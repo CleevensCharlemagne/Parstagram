@@ -16,8 +16,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.parstagram.R;
+import com.example.parstagram.User;
+import com.parse.ParseUser;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -28,7 +31,6 @@ public class EditProfileFragment extends Fragment {
 
     private static int RESULT_LOAD_IMAGE = 1;
     private Button buttonLoadImage;
-    private ImageView ivProfileImage;
 
     public EditProfileFragment() {
         // Required empty public constructor
@@ -45,7 +47,6 @@ public class EditProfileFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ivProfileImage = view.findViewById(R.id.ivProfileImage);
         buttonLoadImage = view.findViewById(R.id.buttonLoadPicture);
         buttonLoadImage.setOnClickListener(new View.OnClickListener() {
 
@@ -77,10 +78,10 @@ public class EditProfileFragment extends Fragment {
             String picturePath = cursor.getString(columnIndex);
             cursor.close();
 
-            ivProfileImage.setImageBitmap(BitmapFactory.decodeFile(picturePath));
-
+            Toast.makeText(getContext(), "image loaded", Toast.LENGTH_LONG).show();
+        } else{
+            Toast.makeText(getContext(), "issue to load image", Toast.LENGTH_LONG).show();
         }
-
 
     }
 }

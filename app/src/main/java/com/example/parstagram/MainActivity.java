@@ -64,25 +64,25 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 Fragment fragment = null;
-                switch(item.getItemId()) {
+                switch (item.getItemId()) {
                     case R.id.post:
                         fragment = new ComposeFragment();
-                         break;
+                        break;
 
                     case R.id.home:
                         fragment = new HomeFragment();
-                         break;
+                        break;
 
                     case R.id.user:
                         fragment = new ProfileFragment();
-                         break;
+                        break;
                 }
                 fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
                 return true;
             }
         });
-           // Set default selection
-           bottomNavigationView.setSelectedItemId(R.id.home);
+        // Set default selection
+        bottomNavigationView.setSelectedItemId(R.id.home);
     }
 
     @Override
@@ -104,12 +104,16 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+//        Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+//        startActivity(intent);
         final FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = null;
         if(item.getItemId()==R.id.editProfile){
             fragment = new EditProfileFragment();
         }
         fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
+
         return super.onOptionsItemSelected(item);
     }
 }
