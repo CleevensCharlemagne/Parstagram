@@ -24,7 +24,7 @@ The following **optional** features are implemented:
 - [ ] Tapping on a post's username or profile photo goes to that user's profile page and shows a grid view of the user's posts
 - [ ] User can comment on a post and see all comments for each post in the post details screen.
 - [ ] User can like a post and see number of likes for each post in the post details screen.
-- [ ] Run your app on your phone and use a custom camera view
+- [ ] Run your app on your phone and use a custom camera view.
 
 The following **additional** features are implemented:
 
